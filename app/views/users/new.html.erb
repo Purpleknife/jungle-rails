@@ -1,13 +1,40 @@
 
+</br>
 <h1>Register</h1>
+</br>
 
 <%= form_for :user, url: '/users' do |f| %>
 
-  First name: <%= f.text_field :first_name %>
-  Last name: <%= f.text_field :last_name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+  <div class="form-group">
+  First name: </br>
+  <%= f.text_field :first_name %>
+  </div>
+  </br>
+
+  <div class="form-group">
+  Last name: </br>
+  <%= f.text_field :last_name %>
+  </div>
+</br>
+
+  <div class="form-group">
+  Email: </br>
+  <%= f.text_field :email %>
+  </div>
+  </br>
+
+  <div class="form-group">
+  Password: </br>
+  <%= f.password_field :password %>
+  </div>
+</br>
+
+  <div class="form-group">
+  Password Confirmation: </br>
+  <%= f.password_field :password_confirmation %>
+  </div>
+  </br>
+
+  <%= f.submit "Submit", class: 'btn btn-success' %>
 
 <% end %>
