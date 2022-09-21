@@ -1,3 +1,25 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.user-section {
+  padding-top: 0.5rem;
+}
+
+
+.nav-user {
+  //display: block;
+  //padding: 0.5rem 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: rgb(165, 221, 165);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  
+
+  &:hover {
+    color: grey;
+    border: 0.5rem;
+    border-color: rgb(165, 221, 165);
+  }
+}
