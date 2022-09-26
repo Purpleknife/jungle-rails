@@ -69,6 +69,39 @@ RSpec.describe User, type: :model do
 
       expect(@user).to_not be_valid
     end
+  end
+
+  describe '.authenticate_with_credentials' do
+
+    before(:each) do
+      @user = User.new do |u|
+        u.first_name = 'James'
+        u.last_name = 'May'
+        u.email = 'test@test.com'
+        u.password = 'password'
+        u.password_confirmation = 'password'
+      end
+      @user.save
+    end
+
+    it 'should pass if the email and password are valid' do
+      user = User.authenticate_with_credentials('test@test.com', 'password')
+
+      expect(user).to_not be(nil)
+    end
+
+    it 'should ignore whitspaces in email' do
+      user = User.authenticate_with_credentials('   test@test.com  ', 'password')
+      
+      expect(user).to_not be(nil)
+    end
+
+    it 'should ignore case sensitivity in email' do
+      user = User.authenticate_with_credentials('tEsT@teSt.COM', 'password')
+
+      expect(user).to_not be(nil)
+    end
+
 
   end
 end
