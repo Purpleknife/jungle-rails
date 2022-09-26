@@ -48,5 +48,27 @@ RSpec.describe User, type: :model do
       expect(user_with_non_unique_email.errors[:email].first).to eql("has already been taken")
     end
 
+    it 'is not valid without a first name' do
+      @user.first_name = nil
+      expect(@user).to_not be_valid
+    end
+
+    it 'is not valid without a last name' do
+      @user.last_name = nil
+      expect(@user).to_not be_valid
+    end
+
+    it 'is not valid without a email' do
+      @user.email = nil
+      expect(@user).to_not be_valid
+    end
+
+    it 'is not valid if password length is less than 8 characters' do
+      @user.password = 'stuff'
+      @user.password_confirmation = 'stuff'
+
+      expect(@user).to_not be_valid
+    end
+
   end
 end
