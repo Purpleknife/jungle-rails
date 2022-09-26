@@ -16,7 +16,7 @@ class User < ApplicationRecord
   def self.authenticate_with_credentials(email, password)
     email = email.strip.downcase #no white spaces, convert it to lowercase.
     user = User.find_by_email(email)
-    user_password = user.authenticate(password)
+    user_password = user.authenticate(password) #authenticate: instance method provided by the has_secure_password gem.
 
     user && user_password ? user : nil
   end
