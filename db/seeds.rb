@@ -217,6 +217,26 @@ cat3.products.create!({
   price: 79.99
 })
 
+## REVIEWS
+User.destroy_all
+user1 = User.create!({
+  first_name: 'James',
+  last_name: 'May',
+  email: 'test@test.com',
+  password: 'password',
+  password_confirmation: 'password'
+})
+
+
+pdt1 = Product.find_by name: 'Cliff Collard'
+
+pdt1.reviews.create!({
+  user_id: user1.id,
+  rating: 5,
+  description: 'Amazing! Will surely order more!'
+})
+
+
 
 puts "DONE!"
 

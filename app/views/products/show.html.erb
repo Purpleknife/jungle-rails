@@ -18,6 +18,25 @@
         <% end %>          
       </div>
     </div>
+
+    <div class="row">
+    
+    <h3>Reviews:</h3>
+      <% if @reviews.size > 0 %>
+        <% @reviews.each do |review| %>
+          <p><strong>User:</strong> <%= "#{review.user.first_name} #{review.user.last_name}" %></p>
+          <p><strong>Rating:</strong> <%= review.rating %> / 5</p>
+          
+          <p><%= review.description %></p>
+          </br>
+          <hr>
+          <% end %>
+      <% else @reviews.size == 0 %>
+        <p><i>There are no reviews yet.</i></p>
+      <% end %>
+
+
+
   </article>
 
 </section>
