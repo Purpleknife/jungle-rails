@@ -21,7 +21,7 @@
 
     <div class="row">
       <h3>Leave a Review</h3>
-        <%= form_for [@product, @review], url: `/products/#{@product.id}/reviews` do |f| %>
+        <%= form_for [@product, @review], url: "/products/#{@product.id}/reviews" do |f| %>
           <div class="form-group">
             <%= f.select :rating, (1..5).to_a, :prompt => "Rating", :required => true, class: "form-select" %>
           </div>
