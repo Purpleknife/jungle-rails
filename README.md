@@ -68,4 +68,4 @@ https://user-images.githubusercontent.com/107894342/192650383-7a85f06c-5049-4fc1
 https://user-images.githubusercontent.com/107894342/192650429-cdcefe5e-ffa8-4339-8459-0f86e50c2293.mp4
 
 ### Email sent to User after placing an Order:
-!["Email"]()
+!["Email"](https://github.com/Purpleknife/jungle-rails/blob/master/docs/order_email.png?raw=true)
