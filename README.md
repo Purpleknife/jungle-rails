@@ -4,7 +4,7 @@ A mini e-commerce application that sells plants, built with Rails 6.1. It had an
 
 ## Bugs fixed
 
-1. `Money Formatting`: All the prices needs to have the same format (=> $24.99).
+1. `Money Formatting`: All the prices need to have the same format (=> $24.99).
 2. `Missing Admin Security`: Implement HTTP Basic Authentication in all the pages accessible to an Admin.
 3. `Sold Out Item added to Cart`: Disable the "Add" to Cart button for all products that are sold out.
 
@@ -61,7 +61,7 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 ### App Overview as a Visitor (non logged-in user):
 https://user-images.githubusercontent.com/107894342/192650283-3cc16f4c-441f-4c39-9194-c3d6d25856a4.mp4
 
-### App Overview as a User):
+### App Overview as a User:
 https://user-images.githubusercontent.com/107894342/192650383-7a85f06c-5049-4fc1-b631-b8cfeef29bd7.mp4
 
 ### Admin Functionality:
