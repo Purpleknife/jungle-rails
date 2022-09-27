@@ -1,7 +1,7 @@
 class Admin::CategoriesController < ApplicationController
 
   http_basic_authenticate_with name: ENV["HTTP_BASIC_AUTH_USERNAME"], password: ENV["HTTP_BASIC_AUTH_PASSWORD"]
-  
+
   def index
     @categories = Category.order(id: :desc).all
   end
@@ -21,7 +21,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   private
-    def product_params
+    def category_params
       params.require(:category).permit(
         :name,
       )
