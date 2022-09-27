@@ -8,9 +8,15 @@
     <h4 style="color: green">Thank you for your order!</h4>
   </div>
   </br>
-  <div class="alert alert-success" role="alert">
-    A receipt with your order's details has been sent to <i><%= @order.email %></i>
-  </div>
+  <% if current_user %>
+    <div class="alert alert-success" role="alert">
+        A receipt with your order's details has been sent to <i><%= @order.email %></i>
+    </div>
+  <% else %>
+    <div class="alert alert-success" role="alert">
+      Since no email adress was provided, we couldn't send you a confirmation email. </i>
+    </div>
+  <% end %>
   </br>
 
   <%= render 'order' %>
