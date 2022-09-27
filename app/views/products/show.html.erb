@@ -19,38 +19,46 @@
       </div>
     </div>
 
-    <div class="row">
-      <h3>Leave a Review</h3>
+    
+
+
+
+  </article>
+  </br>
+  <div class="row">
+      <h3 style="color: green"> ⭐ Leave a Review</h3>
+      </br>
         <%= form_for [@product, @review], url: "/products/#{@product.id}/reviews" do |f| %>
           <div class="form-group">
-            <%= f.select :rating, (1..5).to_a, :prompt => "Rating", :required => true, class: "form-select" %>
-          </div>
+            <%= f.select :rating, (1..5).to_a, :prompt => "Choose a rating", :required => true, class: "form-select" %>
+          </div></br>
           <div class="form-group">
-            <%= f.text_area :description, :required => true, class: "form-control", placeholder: "Write a review" %>
-          </div>
+            <%= f.text_area :description, :required => true, class: "form-control", placeholder: "Write a review." %>
+          </div></br>
           <div class="form-group">
             <%= f.submit "Submit", class: "btn btn-success" %>
           </div>
         <% end %>
     </div>
-
+    </br>
+    </br>
     <div class="row">    
-    <h3>Reviews:</h3>
-      <% if @reviews.size > 0 %>
+    <h3 style="color: green">&nbsp; ✏️ Reviews:</h3>
+      <% if @reviews.size.positive? %>
         <% @reviews.each do |review| %>
-          <p><strong>User:</strong> <%= "#{review.user.first_name} #{review.user.last_name}" %></p>
-          <p><strong>Rating:</strong> <%= review.rating %> / 5</p>
-          
-          <p><%= review.description %></p>
+          <pre>
+          <strong>User:</strong> <%= "#{review.user.first_name} #{review.user.last_name}" %>
+          <strong>Rating:</strong> <%= review.rating %> / 5
+          <strong>Details:</strong> <%= review.description %>
+          </pre>
+          <% if current_user == User.find(review.user_id) %>
+              <%= link_to ' 🗑️ Delete your review', product_review_path(review.product_id, review.id), method: :delete, class: 'btn' %>
+          <% end %>
           </br>
           <hr>
           <% end %>
-      <% else @reviews.size == 0 %>
-        <p><i>There are no reviews yet.</i></p>
+      <% else @reviews.size.zero? %>
+        <p><i>No reviews yet.</i></p>
       <% end %>
-
-
-
-  </article>
 
 </section>
