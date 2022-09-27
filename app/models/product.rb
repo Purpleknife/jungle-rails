@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   mount_uploader :image, ProductImageUploader
 
   has_many :reviews
-  
+
   belongs_to :category
 
   validates :name, presence: true
