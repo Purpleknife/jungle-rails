@@ -59,13 +59,13 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 ## Final Product
 
 ### App Overview as a Visitor (non logged-in user):
-!["Visitor"]()
+https://user-images.githubusercontent.com/107894342/192650283-3cc16f4c-441f-4c39-9194-c3d6d25856a4.mp4
 
 ### App Overview as a User:
-!["User"]()
+https://user-images.githubusercontent.com/107894342/192650383-7a85f06c-5049-4fc1-b631-b8cfeef29bd7.mp4
 
 ### Admin Functionality:
-!["Admin"]()
+https://user-images.githubusercontent.com/107894342/192650429-cdcefe5e-ffa8-4339-8459-0f86e50c2293.mp4
 
 ### Email sent to User after placing an Order:
 !["Email"]()
